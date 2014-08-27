@@ -51,7 +51,11 @@ app.configure('development', function(){
 // });
 
 // index route
-app.get('/', routes.index);
+// app.get('/', routes.index);
+app.get('/', function(req, res) {
+  res.send('You must specify a collection. e.g. - /collections/collectionname')
+  
+})
 
 // Setup the collectionName param for requests
 app.param('collectionName', function(req, res, next, collectionName){
